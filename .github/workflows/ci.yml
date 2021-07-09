@@ -25,7 +25,6 @@ jobs:
           key: ${{ runner.os }}-build-${{ hashFiles('**/mix.lock') }}
       - run: mix deps.get
       - run: mix deps.compile
-      - run: wget https://raw.githubusercontent.com/dwyl/english-words/master/words.txt -O priv/words.txt
       - run: mix test
         env:
           DISCORD_TOKEN: ${{ secrets.DISCORD_TOKEN }}
