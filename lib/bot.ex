@@ -53,7 +53,7 @@ defmodule Bot.Consumer do
               "From Sudo Bot"
             )
 
-            Bot.Scheduler.add(msg.author.id, role_id)
+            Bot.Scheduler.add(msg.guild_id, msg.author.id, role_id)
             role_obj = get_role_for_id(msg.guild_id, role_id)
             {role_id, role_obj.name}
           end)
